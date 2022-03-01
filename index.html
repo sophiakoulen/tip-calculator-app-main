@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href = "style/style.css" type = "text/css">
+  <title>Frontend Mentor | Tip calculator app</title>
+</head>
+<body>
+	<main>
+	<img class="logo" src="images/logo.svg" alt="splitter">
+	<div class="tip-calculator">
+		<div class="input">
+			<field class="bill">
+				<label>Bill</label>
+				<div class="icon"><input type="text"></div>
+			</field>
+			<field class="tip">
+				<label>Select Tip %</label>
+				<div class="options">
+					<button data-value="5">5%</button>
+					<button data-value="10">10%</button>
+					<button data-value="15">15%</button>
+					<button data-value="25">25%</button>
+					<button data-value="50">50%</button>
+					<input data-value="custom" type="text" placeholder="Custom">
+				</div>
+			</field>
+			<field class="people">
+				<label><span>Number of People</span><span class="error"></span></label>
+				<div class="icon"><input type="text"></div>
+			</field>
+		</div>
+		<div class="output">
+			<div>
+			<div class="tip-amount">
+				<div>
+				<p class="label">Tip Amount</p>
+				<p class="pp">/ person</p>
+				</div>
+				<p class="result"></p>
+			</div>
+			<div class="total">
+				<div>
+				<p class="label">Total</p>
+				<p class="pp">/ person</p>
+				</div>
+				<p class="result"></p>
+			</div>
+			</div>
+			<button>RESET</button>
+		</div>
+	</div>
+	</main>
+	<footer>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a target = "_blank" href="https://sophiakoulen.ch">Sophia Koulen</a>.
+  </div>
+  </footer>
+  <script src="script.js" type="text/javascript"></script>
+</body>
+</html>

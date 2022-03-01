@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+:root{
+    --clr-primary:hsl(172, 67%, 45%);
+    
+    --clr-neutral-600:hsl(183, 100%, 15%);
+    --clr-neutral-500:hsl(186, 14%, 43%);
+    --clr-neutral-400:hsl(184, 14%, 56%);
+    --clr-neutral-300:hsl(185, 41%, 84%);
+    --clr-neutral-200:hsl(189, 41%, 97%);
+    --clr-neutral-100:hsl(0, 0%, 100%);
+
+    --fs:24px;
+    
+    --fw-light:400;
+    --fw-regular:500;
+    --fw-bold:700;
+}
+*{
+    padding:0;
+    margin: 0;
+    box-sizing:border-box;
+    font: inherit;
+}
+input,button{
+    border:none;
+    border-radius:3px;
+    padding:.2em;
+    cursor:pointer;
+}
+button:hover, button[data-active=true]{
+    background-color:var(--clr-neutral-300)!important;
+    color:var(--clr-neutral-600)!important;
+}
+body{
+    min-height:100vh;
+    background-color:var(--clr-neutral-300);
+}
+main{
+    font-family: 'Space Mono', monospace;
+    font-weight: var(--fw-bold);
+    font-size:var(--fs);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.logo{
+    margin-top:50px;
+    margin-bottom:50px;
+}
+.tip-calculator{
+    background-color:var(--clr-neutral-100);
+    --br:1em;
+    --spacer:1em;
+    width:min(800px, 100vw);
+    padding:var(--spacer);
+    display:flex;
+    @media(max-width:750px){
+        flex-direction: column;
+    }
+    gap:var(--spacer);
+    border-radius: var(--br);
+    >*{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+    }
+}
+.input{
+    color:var(--clr-neutral-300);
+    gap:30px;
+}
+.input field label{
+    color:var(--clr-neutral-500);
+    font-size:calc(0.6 * var(--fs));
+    padding-bottom:.4em;
+}
+.input input{
+    background-color:var(--clr-neutral-200);
+    color:var(--clr-neutral-500);
+    width:100%;
+    text-align: end;
+}
+.input input:focus, .input input[data-active=true]{
+        outline:2px solid var(--clr-primary) !important;
+}
+.input input[data-error=true]{
+    outline:2px solid #b98379;
+}
+.input .bill .icon{
+    position:relative;
+}
+.input .bill .icon:before{
+    content:"";
+    display:block;
+    position:absolute;
+    height:100%;
+    width:1em;
+    background-image: url("../images/icon-dollar.svg");
+    background-repeat:no-repeat;
+    background-size:50%;
+    background-position:center center;
+}
+.input .options{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    @media(max-width:450px){
+        grid-template-columns:repeat(2,1fr);
+    }
+    gap:.5em;
+    > button{
+        background-color: var(--clr-neutral-600);
+        color:white;
+        :hover{
+            background-color: var(--clr-primary);
+            color:var(--clr-neutral-500);
+        }
+    }
+}
+.input .people label{
+    display:flex;
+    justify-content: space-between;
+    .error{
+        color:#b98379;
+    }
+}
+.input .people .icon{
+    position:relative;
+}
+.input .people .icon:before{
+    content:"";
+    display:block;
+    position:absolute;
+    height:100%;
+    width:1em;
+    background-image: url("../images/icon-person.svg");
+    background-repeat:no-repeat;
+    background-size:50%;
+    background-position:center center;
+}
+.output{
+    background-color:var(--clr-neutral-600);
+    border-radius:calc(0.5 * var(--br));
+    padding:1em;
+}
+.output > div >*{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-bottom:.5em;
+    .label{
+        color:var(--clr-neutral-100);
+        font-weight:var(--fw-bold);
+        font-size:calc(0.6 * var(--fs));
+    }
+    .pp{
+        color:var(--clr-neutral-200);
+        font-weight:var(--fw-light);
+        font-size:calc(0.5 * var(--fs));
+    }
+    .result{
+        font-size:calc(1.8 * var(--fs));
+        color:var(--clr-primary);
+        font-weight: var(--fw-bold);
+    }
+}
+.output > button{
+    font-size:calc(0.8 * var(--fs));
+    background-color:var(--clr-primary);
+    color:var(--clr-neutral-600);
+}
+footer{
+    margin:3em;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
